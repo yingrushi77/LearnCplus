@@ -3446,7 +3446,7 @@ struct student
 	int score;    //分数
 };
 
-//const使用场景
+//const使用场景 使用指针可以节约空间，因为指针只占用4个字节(32位)，8个字节(64位)
 void printStudent(const student *stu) //加const防止函数体中的误操作
 {
 	//stu->age = 100; //操作失败，因为加了const修饰
