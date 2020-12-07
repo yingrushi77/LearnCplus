@@ -1,0 +1,4 @@
+"E:\CLion\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\GitHubRepository\LearnC++\code\yingrushi_project\AddressBook
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/GitHubRepository/LearnC++/code/yingrushi_project/AddressBook/cmake-build-debug

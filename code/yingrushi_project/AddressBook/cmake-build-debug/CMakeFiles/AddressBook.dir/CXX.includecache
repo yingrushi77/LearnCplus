@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/GitHubRepository/LearnC++/code/yingrushi_project/AddressBook/AddressBook.cpp
+iostream
+-
+cstdlib
+-
+
