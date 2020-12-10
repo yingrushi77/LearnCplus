@@ -1,10 +1,10 @@
 /*
- ç±»çš„å±æ€§---å°è£…çš„å°æ¡ˆä¾‹1
- è®¾è®¡ç«‹æ–¹ä½“ç±»(Cube)
+ ÀàµÄÊôĞÔ---·â×°µÄĞ¡°¸Àı1
+ Éè¼ÆÁ¢·½ÌåÀà(Cube)
 
-æ±‚å‡ºç«‹æ–¹ä½“çš„é¢ç§¯å’Œä½“ç§¯
+Çó³öÁ¢·½ÌåµÄÃæ»ıºÍÌå»ı
 
-åˆ†åˆ«ç”¨å…¨å±€å‡½æ•°å’Œæˆå‘˜å‡½æ•°åˆ¤æ–­ä¸¤ä¸ªç«‹æ–¹ä½“æ˜¯å¦ç›¸ç­‰ã€‚
+·Ö±ğÓÃÈ«¾Öº¯ÊıºÍ³ÉÔ±º¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ¡£
  */
 
 /*
@@ -16,69 +16,102 @@
 
 using namespace std;
 
-//è®¾è®¡Cubeç±»
+//Éè¼ÆCubeÀà
 
 class Cube
 {
 private:
-    int m_L;//ç«‹æ–¹ä½“çš„é•¿
-    int m_W;//ç«‹æ–¹ä½“çš„å®½
-    int m_H;//ç«‹æ–¹ä½“çš„é«˜
+    int m_L;//Á¢·½ÌåµÄ³¤
+    int m_W;//Á¢·½ÌåµÄ¿í
+    int m_H;//Á¢·½ÌåµÄ¸ß
 
-    int m_Volume;//é•¿æ–¹ä½“çš„ä½“ç§¯
-    int m_Area;//é•¿æ–¹ä½“çš„é¢ç§¯
+    int m_Volume;//³¤·½ÌåµÄÌå»ı
+    int m_Area;//³¤·½ÌåµÄÃæ»ı
 
 public:
-    //è®¾ç½®å’Œè·å–é•¿æ–¹ä½“çš„å±æ€§
-    //è®¾ç½®é•¿
+    //ÉèÖÃºÍ»ñÈ¡³¤·½ÌåµÄÊôĞÔ
+    //ÉèÖÃ³¤
     void setLength(int length)
     {
         m_L = length;
     }
-    //è·å–é•¿
+    //»ñÈ¡³¤
     int getLength()
     {
         return m_L;
     }
-    //è®¾ç½®å®½
+    //ÉèÖÃ¿í
     void setWidth(int width)
     {
         m_W = width;
     }
-    //è·å–å®½
+    //»ñÈ¡¿í
     int getWidth()
     {
         return m_W;
     }
-    //è®¾ç½®é«˜
+    //ÉèÖÃ¸ß
     void setHeight(int height)
     {
         m_H = height;
     }
-    //è·å–é«˜
+    //»ñÈ¡¸ß
     int getHeight()
     {
         return m_H;
     }
-    //è·å–ä½“ç§¯
+    //»ñÈ¡Ìå»ı
     int getVolume()
     {
         m_Volume = m_L * m_W * m_H;
         return m_Volume;
     }
-    //è·å–é¢ç§¯
+    //»ñÈ¡Ãæ»ı
     int getArea()
     {
         m_Area = 2 * (m_L * m_W + m_L * m_H + m_W * m_H);
         return m_Area;
     }
 
+    //ÄÚ²¿º¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ
+    bool isSameIn(Cube c)
+    {
+        if (m_L == c.getLength() && m_W == c.getWidth() && m_H == c.getHeight())
+        {
+            return true;
+        }
+        return false;
+    }
+
 };
 
+bool isSameOut(Cube c1,Cube c2);//Íâ²¿º¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ
 
 
+int main()
+{
+    Cube c1;//´´½¨Ò»¸öCube¶ÔÏó
+    c1.setLength(10);
+    c1.setWidth(5);
+    c1.setHeight(2);
 
-int main() {
+    Cube c2;//´´½¨ÁíÒ»¸öCube¶ÔÏó
+    c2.setLength(10);
+    c2.setWidth(5);
+    c2.setHeight(2);
 
+    //Íâ²¿º¯ÊıÅĞ¶Ï
+    cout << "Íâ²¿º¯ÊıÅĞ¶Ï£º" << (isSameOut(c1,c2) ? "Á½¸öÁ¢·½ÌåÏàµÈ" : "Á½¸öÁ¢·½Ìå²»ÏàµÈ") << endl;
+    //ÄÚ²¿º¯ÊıÅĞ¶Ï
+    cout << "ÄÚ²¿º¯ÊıÅĞ¶Ï£º" << (c1.isSameIn(c2) ? "Á½¸öÁ¢·½ÌåÏàµÈ" : "Á½¸öÁ¢·½Ìå²»ÏàµÈ") << endl;
     return 0;
+}
+
+bool isSameOut(Cube c1,Cube c2)
+{
+    if (c1.getLength() == c2.getLength() && c1.getWidth() == c2.getWidth() && c1.getHeight() == c2.getHeight())
+    {
+        return true;
+    }
+    return false;
 }
