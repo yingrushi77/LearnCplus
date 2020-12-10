@@ -3,4 +3,4 @@ project(ClassPractice)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ClassPractice main.cpp)
+add_executable(ClassPractice CircleAndPoint.cpp)
